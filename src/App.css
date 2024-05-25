@@ -242,6 +242,10 @@ body {
   margin: 0 16px 7px 0;
 }
 
+.get-container {
+  margin-top: 50px;
+}
+
 .footer-span {
   color: rgba(142, 142, 142, 1);
   font-size: 12px;
@@ -294,6 +298,10 @@ body {
   .download-container {
     flex-direction: column;
     margin: 0 auto;
+  }
+  .page-footer {
+    position: static;
+    margin: 0 auto !important;
   }
 }
 
