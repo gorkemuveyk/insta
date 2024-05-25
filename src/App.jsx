@@ -35,7 +35,7 @@ function App() {
               <div class="inputs-container">
                 <input type="password" name="password" placeholder="Şifre" />
               </div>
-              <a class="login-button" href="#" target="_blank">
+              <a class="login-button" href="#">
                 Giriş Yap
               </a>
 
@@ -46,14 +46,17 @@ function App() {
               </div>
 
               <div class="facebook-container">
-                <a class="facebook-login" href="#" target="_blank">
+                <a class="facebook-login" href="#">
                   <img class="facebook-logo" src="/facebook-logo.png" />
                   Facebook ile Giriş Yap
                 </a>
               </div>
             </form>
 
-            <a class="password-forgot" href="#" target="_blank">
+            <a
+              class="password-forgot"
+              href="https://www.instagram.com/accounts/password/reset/"
+            >
               Şifreni mi unuttun?
             </a>
           </div>
@@ -61,7 +64,10 @@ function App() {
           <div class="signup-container">
             <p>
               Hesabın yok mu?{" "}
-              <a class="signup" href="#" target="_blank">
+              <a
+                class="signup"
+                href="https://www.instagram.com/accounts/emailsignup/"
+              >
                 Hesap oluştur
               </a>
             </p>
@@ -70,10 +76,16 @@ function App() {
           <div class="get-container">
             <p>Uygulamayı indir.</p>
             <div class="download-container">
-              <a class="download-appstore" href="#" target="_blank">
+              <a
+                class="download-appstore"
+                href="https://apps.apple.com/tr/app/instagram/id389801252"
+              >
                 <img class="appstore" src="/applestore-logo.png" />
               </a>
-              <a class="download-googleplay" href="#" target="_blank">
+              <a
+                class="download-googleplay"
+                href="https://play.google.com/store/apps/details?id=com.instagram.android"
+              >
                 <img class="googleplay" src="/googleplay-logo.png" />
               </a>
             </div>
@@ -85,52 +97,67 @@ function App() {
         <div class="links-container">
           <ul class="links-list">
             <li>
-              <a class="link" href="#" target="_blank">
+              <a class="link" href="https://about.meta.com/">
                 Meta
               </a>
             </li>
             <li>
-              <a class="link" href="#" target="_blank">
+              <a class="link" href="https://about.instagram.com/">
                 Hakkında
               </a>
             </li>
             <li>
-              <a class="link" href="#" target="_blank">
+              <a class="link" href="https://about.instagram.com/blog">
                 Blog
               </a>
             </li>
             <li>
-              <a class="link" href="#" target="_blank">
+              <a class="link" href="#">
                 İş Fırsatları
               </a>
             </li>
             <li>
-              <a class="link" href="#" target="_blank">
+              <a
+                class="link"
+                href="https://about.instagram.com/about-us/careers"
+              >
                 Yardım
               </a>
             </li>
             <li>
-              <a class="link" href="#" target="_blank">
+              <a
+                class="link"
+                href="https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect"
+              >
                 Gizlilik
               </a>
             </li>
             <li>
-              <a class="link" href="#" target="_blank">
+              <a
+                class="link"
+                href="https://developers.facebook.com/docs/instagram"
+              >
                 API
               </a>
             </li>
             <li>
-              <a class="link" href="#" target="_blank">
+              <a
+                class="link"
+                href="https://help.instagram.com/581066165581870/"
+              >
                 Koşullar
               </a>
             </li>
             <li>
-              <a class="link" href="#" target="_blank">
+              <a
+                class="link"
+                href="https://www.instagram.com/explore/locations/"
+              >
                 Konumlar
               </a>
             </li>
             <li>
-              <a class="link" href="#" target="_blank">
+              <a class="link" href="https://www.threads.net/login/">
                 Threads
               </a>
             </li>
